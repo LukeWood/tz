@@ -18,7 +18,7 @@ fi
 
 tmux ls | grep "$choice" && {
   tmux attach -t "$choice";  
-  return 1;
+  exit;
 };
 
 tmux new -s "$choice" "/$HOME/wfmenu/$choice"
