@@ -6,7 +6,7 @@ To use it, just copy the `tz` script to somewhere in your bin.
 You can get it by running...
 
 ```
-curl -O 
+curl -O https://raw.githubusercontent.com/LukeWood/tz/refs/heads/master/tz && chmod +x tz
 ```
 
 Then adding the following to your `~/.tmux.conf`:
