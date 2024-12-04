@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e pipefail
+
+if [[ ! -z $TMUX ]]; then
+  tmux detach-client -E "${BASH_SOURCE[0]}"
+  exit;
+fi;
+
+menu=$(tmux ls | awk '{print substr($1, 1, length($1)-1)}')
+menu+="\n"
+
+choice=$(echo -e "$menu" | fzf)
+
+if [ $menu = "" ]; then
+  exit 0;
+fi
+
+tmux ls | grep "$choice" && {
+  tmux attach -t "$choice";  
+  return 1;
+};
+
+tmux new -s "$choice" "/$HOME/wfmenu/$choice"
