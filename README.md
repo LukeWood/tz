@@ -14,7 +14,8 @@ curl -O https://raw.githubusercontent.com/LukeWood/tz/refs/heads/master/tz && ch
 Then adding the following to your `~/.tmux.conf`:
 
 ```
-choice=$(echo -e "$menu" | fzf)
+bind f run-shell "{wherever you put tz}/tz"
 ```
 
+After this you can run `C-b f` and get the `tz` menu to pop up.
 
