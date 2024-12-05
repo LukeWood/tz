@@ -21,4 +21,4 @@ tmux ls | grep "$choice" && {
   exit;
 };
 
-tmux new -s "$choice" "/$HOME/wfmenu/$choice"
+tmux new -s "$choice"
